@@ -24,6 +24,11 @@ Run the application using one of these commands:
 
 ## Configuration
 
-- `config.ini`: Contains your Zoho API credentials and time logging preferences
+`config.ini`: Contains your Zoho API credentials and time logging preferences
+
+### How to get Zoho API credentials
+Follow these steps: https://www.zoho.com/people/api/oauth-steps.html
+
+Scopes needed: `ZOHOPEOPLE.timetracker.ALL`
 
 Note: `config.ini` is ignored by git to keep your credentials safe. Always use `config.sample.ini` as a template and create your own `config.ini` file locally.# automate-timesheet
