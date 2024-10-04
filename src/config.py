@@ -15,10 +15,10 @@ class Config:
 
     def get_api_config(self) -> Dict[str, str]:
         return {
-            'client_id': self.config.get('API', 'client_id'),
-            'client_secret': self.config.get('API', 'client_secret'),
             'zoho_domain': self.config.get('DEFAULT', 'zoho_domain'),
             'zoho_api_domain': self.config.get('DEFAULT', 'zoho_api_domain'),
+            'client_id': self.config.get('API', 'client_id'),
+            'client_secret': self.config.get('API', 'client_secret'),
             'refresh_token': self.config.get('API', 'refresh_token', fallback=None),
             'auth_code': self.config.get('API', 'auth_code', fallback=None)
         }
@@ -63,8 +63,8 @@ class Config:
 
     def save_refresh_token(self, refresh_token: str) -> None:
         self.config.set('API', 'refresh_token', refresh_token)
-        with open(self.config_file, 'w') as configfile:
-            self.config.write(configfile)
+        with open(self.config_file, 'w') as config_file:
+            self.config.write(config_file)
         logger.info("Refresh token saved to config file")
 
     def get_holidays(self):

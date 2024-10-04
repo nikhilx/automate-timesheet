@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 @click.option('--preset', type=click.Choice(['weekly', 'monthly']), help='Use a predefined configuration preset')
 def main(preset: str | None) -> None:
     """Time Tracker CLI for logging time to Zoho."""
-    logger.info("Starting Time Tracker application")
+    logger.info("Starting Time Logger application")
     app = TimeLoggerApp()
 
     if preset:
